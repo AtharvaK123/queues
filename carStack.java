@@ -1,68 +1,79 @@
 public class carStack implements Comparable<carStack>
 {
-    String car;
-    String id;
-    String mpg; 
-    String engineSize;
-    String hp;
-    String weight;
-    String accel;
-    String numCyl;
+    int car;
+    int id;
+    int mpg;
+    int engineSize;
+    int hp;
+    int weight;
+    int accel;
+    int numCyl;
 
     public carStack (String car, String id, String mpg, String engineSize, String hp, String weight, String accel, String numCyl)
     {
-        car = this.car;
-        id = this.id;
-        mpg = this.mpg;
-        engineSize = this.engineSize;
-        hp = this.hp;
-        weight = this.weight;
-        accel = this.accel;
-        numCyl = this.numCyl;
+        this.car=Integer.parseInt(car);
+        this.id = Integer.parseInt(id);
+        this.mpg = Integer.parseInt(mpg);
+        this.engineSize = Integer.parseInt(engineSize);
+        this.hp = Integer.parseInt(hp);
+        this.weight = Integer.parseInt(weight);
+        this.accel = Integer.parseInt(accel);
+        this.numCyl = Integer.parseInt(numCyl);
     }
     public String toString()
     {
-		return "";
+		return car + "\t" + id + "\t" + mpg + "\t" + engineSize + "\t" + hp + "\t" + weight + "\t" + accel + "\t" + numCyl + "\n";
 	}
-    
-    public String getCar()
+
+    public int getCar()
     {
         return car;
     }
-    public String getID()
+    public int getID()
     {
         return id;
     }
-    public String getMPG()
+    public int getMPG()
     {
         return mpg;
     }
-    public String getEngineSize()
+    public int getEngineSize()
     {
         return engineSize;
     }
-    public String getHP()
+    public int getHP()
     {
         return hp;
     }
-    public String getWeight()
+    public int getWeight()
     {
         return weight;
     }
-    public String getAccel()
+    public int getAccel()
     {
         return accel;
     }
-    public String getnumCyl()
+    public int getnumCyl()
     {
         return numCyl;
     }
 
 
-  	public int compareTo (carStack otherGolfer)
+  	public int compareTo (carStack other)
     {
+		//1. Acceleration
+		//2. Miles Per Gallon
+		//3. Horsepower
+		//4. Engine Size
+		//5. Weight
+		//6. Cylinders
+		//7. CarID
+		if(getAccel()>other.getAccel())
+			return -1;
+		if(getAccel()<other.getAccel())
+			return 1;
 
-		return 0;
+		return getID()-other.getID();
     }
 
 
