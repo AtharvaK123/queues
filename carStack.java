@@ -29,11 +29,11 @@ public class carStack implements Comparable<carStack>
     {
         return car;
     }
-    public int getID()
+    public int getId()
     {
         return id;
     }
-    public int getMPG()
+    public int getMpg()
     {
         return mpg;
     }
@@ -41,7 +41,7 @@ public class carStack implements Comparable<carStack>
     {
         return engineSize;
     }
-    public int getHP()
+    public int getHp()
     {
         return hp;
     }
@@ -69,26 +69,68 @@ public class carStack implements Comparable<carStack>
 		//6. Cylinders
 		//7. CarID
 		if(getAccel()>other.getAccel())
-			return -1;
-		if(getAccel()<other.getAccel())
+        {
 			return 1;
+        }
+		if(getAccel()<other.getAccel())
+        {
+			return -1;
+        }
 
-		return getID()-other.getID();
+        if(getMpg() > other.getMpg())
+        {
+            return 1;
+        }
+        if(getMpg() < other.getMpg())
+        {
+            return -1;
+        }
+
+        if(getHp() > other.getHp())
+        {
+            return 1;
+        }
+        if(getHp() < other.getHp())
+        {
+            return -1;
+        }
+
+        if(getEngineSize() > other.getEngineSize())
+        {
+            return 1;
+        }
+        if(getEngineSize() < other.getEngineSize())
+        {
+            return -1;
+        }
+
+        if(getWeight() > other.getWeight())
+        {
+            return 1;
+        }
+        if(getWeight() < other.getWeight())
+        {
+            return -1;
+        }
+
+        if(getnumCyl() > other.getnumCyl())
+        {
+            return 1;
+        }
+        if(getnumCyl() < other.getnumCyl())
+        {
+            return -1;
+        }
+
+        if(getId() > other.getId())
+        {
+            return 1;
+        }
+        if(getId() < other.getId())
+        {
+            return -1;
+        }
+        
+        return getId()-other.getId();
     }
-
-
-	/*public int compareTo (Object obj)
-    {
-		Golfer otherGolfer = (Golfer) obj;
-
-		char a = golferName.charAt(0);
-		char b = otherGolfer.golferName.charAt(0);
-
-		if (a>b) return 1;
-		if (a<b) return -1;
-		return 0;
-    }
-
-*/
-
 }

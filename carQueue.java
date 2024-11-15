@@ -47,22 +47,21 @@ public class carQueue
 		return stack;
    }
 
-   public PriorityQueue toPQ(Stack<carStack> s)
-   {
-	   PriorityQueue<carStack> pq = new PriorityQueue<carStack>();
+   public PriorityQueue<carStack> toPQ(Stack<carStack> s) {
+    PriorityQueue<carStack> pq = new PriorityQueue<carStack>(); // Uses carStack's compareTo method
 
-		while(!s.isEmpty())
-		{
-			carStack c = s.pop();
+    while (!s.isEmpty()) {
+        carStack c = s.pop();
+        pq.add(c);  // Add carStack to PriorityQueue, which will organize based on compareTo
+    }
+	while (!s.isEmpty()) {
+        carStack we = pq.peek();  // Add carStack to PriorityQueue, which will organize based on compareTo
+		System.out.print("hi");
+    }
 
-			Stack<carStack> stack = new Stack<carStack>();
-			stack.push(c);
-			carStack stack2 = stack.pop();
-			System.out.print("PRINTING STACK: \n" + stack2.toString());
-		}
+    return pq;
+}
 
-	   return pq;
-   }
 
    public String printPQueue(Queue<carStack> q)
    {
